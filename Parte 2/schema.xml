@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema name="example" version="1.6">
+  <fields>
+    <field name="id" type="int" indexed="true" stored="true" required="true" />
+    <field name="nome" type="text_general" indexed="true" stored="true" />
+    <field name="idade" type="int" indexed="true" stored="true" />
+    <field name="serie" type="int" indexed="true" stored="true" />
+    <field name="nota_media" type="float" indexed="true" stored="true" />
+    <field name="endereco" type="text_general" indexed="true" stored="true" />
+    <field name="nome_do_pai" type="text_general" indexed="true" stored="true" />
+    <field name="nome_da_mae" type="text_general" indexed="true" stored="true" />
+    <field name="data_de_nascimento" type="date" indexed="true" stored="true" />
+  </fields>
+  <uniqueKey>id</uniqueKey>
+  <types>
+    <fieldType name="string" class="solr.StrField" />
+    <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <tokenizer class="solr.StandardTokenizerFactory" />
+        <filter class="solr.LowerCaseFilterFactory" />
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.StandardTokenizerFactory" />
+        <filter class="solr.LowerCaseFilterFactory" />
+      </analyzer>
+    </fieldType>
+    <fieldType name="int" class="solr.TrieIntField" precisionStep="0" />
+    <fieldType name="float" class="solr.TrieFloatField" precisionStep="0" />
+    <fieldType name="date" class="solr.TrieDateField" precisionStep="6" positionIncrementGap="0"/>
+  </types>
+</schema>
