@@ -5,6 +5,8 @@ Aqui está o passo a passo da resolução de ambos os desafios, detalhando cada 
 
 # Parte 1
 
+Nesta seção, contém os passos para construção do dashboard com informações relacionadas ao ambiente acadêmico.
+
 1. **Construção da Fonte de Dados**
 
    - Para ter a fonte de dados, utilizei a query "fonte_dados.sql" para criar três tabelas: Alunos, Matérias e Notas.
